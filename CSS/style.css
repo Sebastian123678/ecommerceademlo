@@ -1,33 +1,145 @@
-body {
+/* Inicializamos el proyecto*/
+*,
+*::before,
+*::after {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para las cajitas */
+}
+
+body {
+    margin: 0 auto; /* Informacion centrada */
+    /*overflow: hidden; /* Lo que se desborda que se oculte */
     max-width: 100%;
     background-color: #F6F3F3;
 }
-
-.navigation {
-    height: 40px;
+img {
+    max-width: 100%;
+}
+/* Encabezado */
+.header {
+    position: fixed;
+    top: 0;
     width: 100%;
+    max-width: 100%;
+    background-color: white;
+    z-index: 100 /* Sobre poner elementos encima de todo */
+}
+/* Encabezado contenedor de todo */
+.header_content {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    gap: 80%;
+    gap: 20px;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    position: relative;
 }
-.Academlo_text {
-    height: 35px;
-    width: 110px;
-    
+/* Imagenes de abrir y cerrar el filtro */
+.header_menu {
+    margin-left: 15px;
 }
-.Shopping_cart{
-    height: 38px;
-    width: 38px;
+/* Por defecto aparezca desactivado */
+.menu_close {
+    display: none;
+}
+.menu_open.active {
+    display: none;
+}
+.menu_close.active {
+    display: block;
+}
+.header_cart,
+.header_menu {
+    width: 30px;
+    aspect-ratio: 1;
+    object-fit: contain;
+    cursor: pointer;
+}
+.menu_cart {
+    background-color: white;
+    position: absolute;
+    top: 50px;
+    right: -100%;
+    width: 300px;
+    height: calc(100vh - 50px);
+    padding: 20px;
+    transition: right 500ms ease;
+}
+.menu_cart.active {
+    right: 0;
+    transition: right 500ms ease;
+}
+
+/* Lista del filtro */
+.header_list {
+    background-color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top: 50px;
+    left: -250px;
+    width: 130px;
+    transition: left 800ms ease;
+}
+.header_list.active {
+    left: 0;
+    transition: left 500ms ease;
+}
+.header_list_item{
+    min-width: max-content;
+    cursor: pointer;
+    height: 30px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+/* Imagen de Academlo */
+.academlo_text {
+    height: 90%;
+    width: 150px;
+}
+/* Contenedor del carrito */
+.header_cart {
+    margin-right: 15px;
+    position: relative;
+    cursor: pointer;
+}
+/* La imagen del carrito */
+.shopping_cart{
+    height: 50px;
+    width: 50px;
     border-radius: 20px;
     cursor: pointer;
 }
-
-.content {
-    justify-content: space-between;
-    gap: 80%;
+/* El numero encima del carrito */
+.header_cart span {
+    margin: 6px 19px 0px 0px;
+    padding: 2px;
+    position: absolute;
+    top: 7.5px;
+    right: 12.5px;
+    background-color: rgba(0, 0, 0, 0.557);
+    color: white;
+    height: 23px;
+    width: 23px;
+    text-align: center;
 }
 
+
+/* Todo el contenido de la pagina */
+main {
+    /* Bajar todo 50px de la barra de navegación */
+    position: relative;
+    top: 50px;
+}
+/* Imagen grande de Academlo */
 .Star_page {
     display: flex;
     justify-content: center;
@@ -38,12 +150,20 @@ body {
     padding: 20px;
 }
 .Logo_Academlo {
-    height: 80%;
-    width: 230px;
-    padding: 10px; 
+    height: 90%;
     text-align: center;
 }
 
+/* Texto "Todos nuestros productos" */
+.content{
+    text-align: center;
+    margin: 25px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Productos */
 .product {
     padding: 15px;
     background-color: white;
@@ -53,11 +173,15 @@ body {
     transform: scale(1.1);
     box-shadow: 9px 6px 34px -3px  rgb(139, 139, 139);
 }
-.products_Academlo{
+.products_academlo{
+    width: 100%;
+    min-width: 500px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
     align-content: flex-start;
+    justify-content: center;
+    margin-top: 50px;
 }
 .product_img {
     border: none;
@@ -75,16 +199,17 @@ body {
     transform: rotate(10deg);
     transition: filter, transform 500ms ease;
     transform: rotate(-10deg);
-    transition: filter, transform 800ms ease;
 }
 .product_name {
     max-width: 200px;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .product_price {
     text-align: center;
     padding: 3px;
     color: rgb(5, 170, 19);
+    
 }
 .content_btn_cart {
     text-align: center;
@@ -97,6 +222,152 @@ body {
     cursor: pointer;
     border: 0px;
 }
-.btn_cart:hover {
-    transform: scale(1.1);
+
+
+/* Diseño de la pestaña del carrito de compras */
+.menu_cart {
+    background-color: #434343;
+    background-color: #274671;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
 }
+.cart_products {
+    position: relative;
+    top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 13px;
+    width: 100%;
+}
+.cart_product_container {
+    background-color: #f6f3f3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.cart_product {
+    background-color: #f6f3f3;
+    display: flex;
+    width: 90%;
+    border: 1px;
+}
+.cart_product_image {
+    width: 100%;
+}
+.cart_product_description {
+    width: 100%;
+    font-size: 13px;
+}
+.cart_product_description h3 {
+    color: #EB4A5A;
+    font-weight: bold;
+}
+.cart_counter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid;
+    padding: 4px 18px 4px 18px;
+    border-radius: 10px;
+}
+.cart_total {
+    display: flex;
+    background-color: #274671;
+    background-color: #434343;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 110px;
+    
+}
+.cart_total_info {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+    color: #F9FaFc;
+    font-size: 15px;
+}
+.btn_buy {
+    width: 40%;
+    background-color: #EB4A5A;
+    border-radius: 20px;
+    padding: 7px 18px 7px 18px;
+    cursor: pointer;
+    border: 0px;
+}
+.trash,
+.plus,
+.less{
+    cursor: pointer;
+}
+.firmas{
+    padding-top: 30px;
+    left:30px;
+    justify-content: space-between;
+    align-items: center;
+    color: #000
+}
+
+/* Modal o ventana flotante */
+.modal {
+    background-color: #000a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active{
+    display: flex;
+    top:5%;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black
+}
+.modal_product {
+    background-color: #F6F3F3;
+    width: 50%;
+    height: 80%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    position: relative;
+    
+}
+.modal_product>span {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal_img_product {
+    max-width: 80%;
+}
+.modal_group span {
+    font-weight: bold;
+    color: #EB4A5A;
+}
+.cerrar {
+    color: red;
+}
+

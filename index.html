@@ -8,29 +8,58 @@
     <title>Academlo</title>
 </head>
 <body>
-    <nav class="navigation">
-        <img class="Academlo_text" src="./IMG/logo_nombre.png" alt="Academlo">
-        <img class="Shopping_cart" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO9JREFUSEvNlN0VATEQhb/thE7ohFeKQBG8ohI6oRPOdTJ71m42GbvimNck95s7P6koHFVhfX4KeAQ3d+AMbL/hrunAAKY7B65jIbESLYBjEBdkVMQAE+AWVEe76GuyHMjJ0FAfp3rcB2i6GALJAiR6AWbAEjg5KeZ8Z1OY2gNrdp2NA2KTqPLoXXLRPm22JSS3cv2K3CZr2TahRPWjHifRkuYA5sJTJivPm2YO0Gx23biIg16nHoAmSfY90VlMD0DClmEKon+r87V4AZ7so3e8gD2wAg7AuqWUOsuOqWk1v/J2UqkzN6C4g+I9+F/AE7jxMhlT41/bAAAAAElFTkSuQmCC" alt="Carrito_Compras">
-    </nav>
-
-    <header>
-        <section class="Star_page">
-            <img class="Logo_Academlo" src="./IMG/logo_blanco.png" alt="LogoAcademlo">
-        </section>
+    <header class="header">
+        <div class="header_content">
+            <div class="header_menu">
+                <img class="menu_close" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUxJREFUSEu1lY1NAzEMhV83gUkKm7STQCcBJoFOUtgEfVV88rlOnAM10imn/Lxn+70kO9257e6MrxmCJ0l8+9Z/S/qS9NN6/rttRPAg6a2BjjAgfJZEf9N6BK+SXjaUD/APSexbtYxgK7gHPEWSSEBZLhsij0vJ5Ni0uc5Fgs9OzdkIuW/ZGPOMP9pCT3BoosaoLCLIjcQixV2ZVoh+dZcnyGrvHQI4JDQj7ZV00cITYEmyyOpqNgSQj+hGejHPnlUGiBvrbGTR65UZFh18BhWBd4eVqxfQErwnGDnI19ycMiJ5bzqVIgNmjrCyROGzc5OKjOXMJfF0EpEHMhIsmhmDjNmzymD2cqsO+uKg7CRX7qjAfUnTq4LB3omeAS8vO0DIApIt1zX7bsCzEvkoZzX504NjRHY10NuTaefg/N8nc6bm5ZqZR78EGS34BUOwUhkEm7llAAAAAElFTkSuQmCC" alt="Menu button">
+                <img class="menu_open" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAExJREFUSEtjZKAxYKSx+QyjFhAM4QEJov8EnYVfAYqjsfmA5hZQ6AFU7QMSBzT3Ac3jgOYW0DyIhr4FNI8Dmlsw9ONg1AcoIUDz0hQAbegGGXzv/l0AAAAASUVORK5CYII=" alt="Menu button"/>
+            </div>
+            <ol class="header_list">
+                <li class="header_list_item">Todos</li>
+                <li class="header_list_item">Camisetas</li>
+                <li class="header_list_item">Sueter</li>
+                <li class="header_list_item">Busos</li>
+            </ol>
+            <div class="header_academlo">
+                <img class="academlo_text" src="./IMG/logo_nombre.png" alt="Image Academlo">
+            </div>
+            <div class="header_cart">
+                <img class="shopping_cart" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO9JREFUSEvNlN0VATEQhb/thE7ohFeKQBG8ohI6oRPOdTJ71m42GbvimNck95s7P6koHFVhfX4KeAQ3d+AMbL/hrunAAKY7B65jIbESLYBjEBdkVMQAE+AWVEe76GuyHMjJ0FAfp3rcB2i6GALJAiR6AWbAEjg5KeZ8Z1OY2gNrdp2NA2KTqPLoXXLRPm22JSS3cv2K3CZr2TahRPWjHifRkuYA5sJTJivPm2YO0Gx23biIg16nHoAmSfY90VlMD0DClmEKon+r87V4AZ7so3e8gD2wAg7AuqWUOsuOqWk1v/J2UqkzN6C4g+I9+F/AE7jxMhlT41/bAAAAAElFTkSuQmCC" alt="Carrito_Compras">
+                <span></span>
+            </div>
+            <div class="menu_cart">
+                <div class="cart_products"></div>
+                <div class="cart_total">
+                    <div class="cart_total_info">
+                        <div class="info_amount">Cantidad: </div>
+                        <div class="info_total">Total: </div>
+                    </div>
+                    <button class="btn_buy">Comprar</button>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
-        <section class="content">
-                <h2>Todos nuestros productos</h2>
-                <select name="filtro" id="filtro_productos">
-                    <option value="Todos">Todos</option>
-                    <option value="shirt">Camisetas</option>
-                    <option value="sweater">Suéter</option>
-                    <option value="hoddie">Busos</option>
-                </select>
+        <section class="Star_page">
+            <img class="Logo_Academlo" src="./IMG/logo_blanco.png" alt="LogoAcademlo">
         </section>
-        <section class="products_Academlo"></section>
+        <section class="content">
+            <div>
+                <h2>Todos nuestros productos</h2>
+            </div>
+        </section>
+        <section class="products_api">
+            <div class="products_academlo">
+            </div>
+        </section>
+
+        <section class="modal">
+            <div class="modal_product">
+            </div>
+        </section>
     </main>
+
     <footer></footer>
 </body>
 </html>
