@@ -23,7 +23,7 @@ img {
     width: 100%;
     max-width: 100%;
     background-color: white;
-    z-index: 100 /* Sobre poner elementos encima de todo */
+    z-index: 10; /* Sobre poner elementos encima de todo */
 }
 /* Encabezado contenedor de todo */
 .header_content {
@@ -156,7 +156,9 @@ main {
     /* Bajar todo 50px de la barra de navegación */
     position: relative;
     top: 50px;
+    width: 100%;
 }
+
 /* Imagen grande de Academlo */
 .Star_page {
     display: flex;
@@ -175,7 +177,6 @@ main {
 .Logo_Academlo:hover{
     transform: scale(1.1);
     transition: ease-in 0.5s;
-    
 }
 
 .academlo_text:hover{
@@ -196,8 +197,7 @@ main {
 .product {
     padding: 15px;
     background-color: white;
-    border-radius: 20px;
-    
+    border-radius: 20px; 
 }
 .product:hover {
     transform: scale(1.1);
@@ -241,8 +241,7 @@ main {
     padding: 0px;
     color: rgb(0, 0, 0);
     text-align: right; 
-    font-weight: bold;   
-    
+    font-weight: bold;
 }
 
 .content_btn_cart {
@@ -391,20 +390,19 @@ main {
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 100
 }
 
 .modal.active{
     display: flex;
     top:5%;
-    left:30%;
-    height: 100%;
-    width: 500px;
-    border: 1px solid black
+    height: 95%;
+    width: 100%;
+    border: 1px solid black;
 }
 .modal_product {
     background-color: #F6F3F3;
     width: 90%;
-    height: 90%;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -412,7 +410,6 @@ main {
     flex-wrap: wrap;
     padding: 10px;
     position: relative;
-   
 }
 .modal_product>span {
     position: absolute;
@@ -427,31 +424,30 @@ main {
     max-width: 225px;
 }
 .modal_group span {
-    color: red;
+    color: #EB4A5A;
 }
 .cerrar {
-    color: red
+    color: #EB4A5A;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 500px) {
+    .Star_page {
+        width: 125%;
+    }
+    .products_academlo {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .product {
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+        width: 100%;
+    }
+    .product_descripcion{
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
