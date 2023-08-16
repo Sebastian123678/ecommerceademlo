@@ -61,7 +61,7 @@ function printProducts (db) {
                 <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
             </div>
             <div class="product_name">
-                <span>${product.category} - ${product.name}</span>
+                <span>${product.name}</span>
             </div>
             <div class="product_price">
                 <span>$${product.price}.00</span>
@@ -261,7 +261,7 @@ function buyCart(db) {
 
 // Usar el filtro
 function handleList(db) {
-    const header_list_item = document.querySelectorAll('.header_list');
+    const header_list_item = document.querySelectorAll('.header_list_item');
     // Si selecciona todos
     header_list_item[0].addEventListener('click', function() {
         printProducts(db);
@@ -294,17 +294,17 @@ function handleList(db) {
     });
     // Si selecciona hoddie
     header_list_item[2].addEventListener('click', function() {
-        const productsHTML = document.querySelector('.products_Academlo');
+        const productsHTML = document.querySelector('.products_academlo');
         let html = '';
         for (const product of db.products) {
-            if(product.category === 'hoddie'){
+            if(product.category==='hoddie'){
                 html += `
                     <div class="product">
                         <div class="div_img">
                             <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
                         </div>
                         <div class="product_name">
-                            <span>${product.category} - ${product.name}</span>
+                            <span>${product.name}</span>
                         </div>
                         <div class="product_price">
                             <span>$${product.price}.00</span>
@@ -320,17 +320,17 @@ function handleList(db) {
     });
     // Si selecciona sweater
     header_list_item[3].addEventListener('click', function() {
-        const productsHTML = document.querySelector('.products_Academlo');
+        const productsHTML = document.querySelector('.products_academlo');
         let html = '';
         for (const product of db.products) {
-            if(product.category === 'sweater'){
+            if(product.category==='sweater'){
                 html += `
                     <div class="product">
                         <div class="div_img">
                             <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
                         </div>
                         <div class="product_name">
-                            <span>${product.category} - ${product.name}</span>
+                            <span>${product.name}</span>
                         </div>
                         <div class="product_price">
                             <span>$${product.price}.00</span>
@@ -408,7 +408,7 @@ async function main () {
     buyCart(db);
 
     // Eventos de navBar
-    //handleList(db);
+    handleList(db);
 
     // Eventos del modal o ventana flotante del producto
     modalProduct(db);

@@ -52,7 +52,7 @@ img {
 }
 .header_cart,
 .header_menu {
-    width: 30px;
+    width: 45px;
     aspect-ratio: 1;
     object-fit: contain;
     cursor: pointer;
@@ -120,7 +120,7 @@ img {
 }
 /* El numero encima del carrito */
 .header_cart span {
-    margin: 6px 19px 0px 0px;
+    margin: 6px 35px 0px 0px;
     padding: 2px;
     position: absolute;
     top: 7.5px;
