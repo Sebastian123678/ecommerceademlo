@@ -392,7 +392,9 @@ main {
     align-items: center;
     z-index: 100
 }
-
+.modal_group{
+    max-width: 500px;
+}
 .modal.active{
     display: flex;
     top:5%;
@@ -402,7 +404,7 @@ main {
 }
 .modal_product {
     background-color: #F6F3F3;
-    width: 90%;
+    width: 600px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -410,6 +412,8 @@ main {
     flex-wrap: wrap;
     padding: 10px;
     position: relative;
+    gap: 40px;
+    flex-direction: column;
 }
 .modal_product>span {
     position: absolute;
