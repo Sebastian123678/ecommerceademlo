@@ -371,11 +371,15 @@ main {
     cursor: pointer;
 }
 .firmas{
-    padding-top: 30px;
-    left:30px;
     justify-content: space-between;
-    align-items: center;
-    color: #000
+    
+    color: #000;
+    background-color: #EB4A5A;
+    padding: 40px;
+}
+.firmas h4 {
+    text-align: center;
+    font-size: 20px;
 }
 
 /* Modal o ventana flotante */
