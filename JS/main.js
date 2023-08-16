@@ -63,9 +63,11 @@ function printProducts (db) {
             <div class="product_name">
                 <span>${product.name}</span>
             </div>
-            <div class="product_price">
-                <span>$${product.price}.00</span>
+            <div class="product_price" class="black&white">
+            <span><img class="BYW" src="./IMG/red&black.png" alt="ByW">
+                $${product.price}.00</span>
             </div>
+            
             <div class="content_btn_cart">
                 <button id=${product.id} class="btn_cart">Agregar al carrito</button>
             </div>
@@ -263,86 +265,90 @@ function buyCart(db) {
 function handleList(db) {
     const header_list_item = document.querySelectorAll('.header_list_item');
     // Si selecciona todos
+    console.log(header_list_item);
     header_list_item[0].addEventListener('click', function() {
         printProducts(db);
     });
     // Si selecciona shirt
     header_list_item[1].addEventListener('click', function() {
         const productsHTML = document.querySelector('.products_academlo');
-        let html = '';
+        let html = ''; 
         for (const product of db.products) {
             if(product.category==='shirt'){
                 html += `
-                    <div class="product">
-                        <div class="div_img">
-                            <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
-                        </div>
-                        <div class="product_name">
-                            <span>${product.category} - ${product.name}</span>
-                        </div>
-                        <div class="product_price">
-                            <span>$${product.price}.00</span>
-                        </div>
-                        <div class="content_btn_cart">
-                            <button id=${product.id} class="btn_cart">Agregar al carrito</button>
-                        </div>
+                <div class="product">
+                    <div class="div_img">
+                        <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
                     </div>
-                `;
+                    <div class="product_name">
+                        <span>${product.name}</span>
+                    </div>
+                    <div class="product_price">
+                        <span>$${product.price}.00</span>
+                    </div>
+                    <div class="content_btn_cart">
+                        <button id=${product.id} class="btn_cart">Agregar al carrito</button>
+                    </div>
+                </div>
+                `        
             }
         }
         productsHTML.innerHTML = html;
+        
     });
     // Si selecciona hoddie
     header_list_item[2].addEventListener('click', function() {
         const productsHTML = document.querySelector('.products_academlo');
-        let html = '';
+        let html = ''; 
         for (const product of db.products) {
-            if(product.category==='hoddie'){
+            if(product.category==='sweater'){
                 html += `
-                    <div class="product">
-                        <div class="div_img">
-                            <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
-                        </div>
-                        <div class="product_name">
-                            <span>${product.name}</span>
-                        </div>
-                        <div class="product_price">
-                            <span>$${product.price}.00</span>
-                        </div>
-                        <div class="content_btn_cart">
-                            <button id=${product.id} class="btn_cart">Agregar al carrito</button>
-                        </div>
-                    </div>
-                `;
+        <div class="product">
+            <div class="div_img">
+                <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
+            </div>
+            <div class="product_name">
+                <span>${product.name}</span>
+            </div>
+            <div class="product_price">
+                <span>$${product.price}.00</span>
+            </div>
+            <div class="content_btn_cart">
+                <button id=${product.id} class="btn_cart">Agregar al carrito</button>
+            </div>
+        </div>
+        `        
             }
         }
         productsHTML.innerHTML = html;
+        
     });
     // Si selecciona sweater
     header_list_item[3].addEventListener('click', function() {
         const productsHTML = document.querySelector('.products_academlo');
-        let html = '';
+        let html = ''; 
         for (const product of db.products) {
-            if(product.category==='sweater'){
+            if(product.category==='hoddie'){
                 html += `
-                    <div class="product">
-                        <div class="div_img">
-                            <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
-                        </div>
-                        <div class="product_name">
-                            <span>${product.name}</span>
-                        </div>
-                        <div class="product_price">
-                            <span>$${product.price}.00</span>
-                        </div>
-                        <div class="content_btn_cart">
-                            <button id=${product.id} class="btn_cart">Agregar al carrito</button>
-                        </div>
-                    </div>
-                `;
+        <div class="product">
+            <div class="div_img">
+                <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
+            </div>
+            <div class="product_name">
+                <span>${product.name}</span>
+            </div>
+            <div class="product_price">
+                <span>$${product.price}.00</span>
+            </div>
+            <div class="content_btn_cart">
+                <button id=${product.id} class="btn_cart">Agregar al carrito</button>
+            </div>
+        </div>
+        `        
             }
         }
         productsHTML.innerHTML = html;
+        
     });
 }
 
@@ -368,7 +374,7 @@ function modalProduct (db) {
                     <h3><span>Categoria: </span>${productFind.category}</h3>
                     <h3><span>Precio: </span>${productFind.price} | <span>Stock: </span>${productFind.quantity}</h3>
                 </div>
-                <span>x</span>
+                <span class= cerrar>Cerrar</span>
             `;
             modal.classList.add('active');
         }
