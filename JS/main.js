@@ -280,14 +280,16 @@ function handleList(db) {
                     <div class="div_img">
                         <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
                     </div>
-                    <div class="product_name">
-                        <span>${product.name}</span>
-                    </div>
-                    <div class="product_price">
-                        <span>$${product.price}.00</span>
-                    </div>
-                    <div class="content_btn_cart">
-                        <button id=${product.id} class="btn_cart">Agregar al carrito</button>
+                    <div class="product_descripcion">
+                        <div class="product_name">
+                            <span>${product.name}</span>
+                        </div>
+                        <div class="product_price" class="black&white">
+                            <span><img class="BYW" src="./IMG/red&black.png" alt="ByW">$${product.price}.00</span>
+                        </div>
+                        <div class="content_btn_cart">
+                            <button id=${product.id} class="btn_cart">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 `        
@@ -303,21 +305,23 @@ function handleList(db) {
         for (const product of db.products) {
             if(product.category==='sweater'){
                 html += `
-        <div class="product">
-            <div class="div_img">
-                <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
-            </div>
-            <div class="product_name">
-                <span>${product.name}</span>
-            </div>
-            <div class="product_price">
-                <span>$${product.price}.00</span>
-            </div>
-            <div class="content_btn_cart">
-                <button id=${product.id} class="btn_cart">Agregar al carrito</button>
-            </div>
-        </div>
-        `        
+                <div class="product">
+                    <div class="div_img">
+                        <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
+                    </div>
+                    <div class="product_descripcion">
+                        <div class="product_name">
+                            <span>${product.name}</span>
+                        </div>
+                        <div class="product_price" class="black&white">
+                            <span><img class="BYW" src="./IMG/red&black.png" alt="ByW">$${product.price}.00</span>
+                        </div>
+                        <div class="content_btn_cart">
+                            <button id=${product.id} class="btn_cart">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                `        
             }
         }
         productsHTML.innerHTML = html;
@@ -330,21 +334,23 @@ function handleList(db) {
         for (const product of db.products) {
             if(product.category==='hoddie'){
                 html += `
-        <div class="product">
-            <div class="div_img">
-                <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
-            </div>
-            <div class="product_name">
-                <span>${product.name}</span>
-            </div>
-            <div class="product_price">
-                <span>$${product.price}.00</span>
-            </div>
-            <div class="content_btn_cart">
-                <button id=${product.id} class="btn_cart">Agregar al carrito</button>
-            </div>
-        </div>
-        `        
+                <div class="product">
+                    <div class="div_img">
+                        <img id=${product.id} class="product_img" src="${product.image}" alt="image product"/>
+                    </div>
+                    <div class="product_descripcion">
+                        <div class="product_name">
+                            <span>${product.name}</span>
+                        </div>
+                        <div class="product_price" class="black&white">
+                            <span><img class="BYW" src="./IMG/red&black.png" alt="ByW">$${product.price}.00</span>
+                        </div>
+                        <div class="content_btn_cart">
+                            <button id=${product.id} class="btn_cart">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            `        
             }
         }
         productsHTML.innerHTML = html;
